@@ -1,16 +1,16 @@
-import { ProductType } from '../../utils/types'
+import {  ProductType} from '../../utils/types'
 import Product from '../Product';
 import './style.css';
 
 type Props = {
-  products: ProductType[] | null;
+  products:ProductType[] | null; 
 }
 
-const ProductList = (props:Props) => {
-  console.log(`productList`,props.products)
+const ProductList = ({products}:Props) => {
+  console.log(`productList`,products)
     return (
     <div>
-      {props.products?props.products?.map((product:ProductType) => <Product product={product} />):<h1>loading</h1>}
+      {products ? products.products.map((product:ProductType) => (<Product product={product} />)):<h1>loading</h1>}
     </div>
   )
 }

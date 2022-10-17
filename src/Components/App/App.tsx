@@ -1,22 +1,21 @@
-
 import LoadingAnimation from '../LoadingAnimation';
 import ProductList from '../ProductList/ProductList';
 import useApp from './useApp';
 import './App.css'
 import { gK, strings } from '../../utils/strings-english';
 
+
 function App() {
   const { isLoading, products } = useApp();
-  console.log(`app.tsx`,products)
-  if (!isLoading) return <LoadingAnimation />;
+
+  if (isLoading) return <LoadingAnimation />;
 
   return (
     <div className="App product__list">
-      <h2>{gK("products_title","en")}</h2>
-      <ProductList  products={products} />
+      <h2>{gK('products_title',"en")}</h2>
+      <ProductList products={products} />
     </div>
   )
 }
 
 export default App
-
